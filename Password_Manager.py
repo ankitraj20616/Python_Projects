@@ -30,12 +30,7 @@ if __name__ == "__main__":
         file.close()
         return key
 
-    master_password = input("Enter the master password to open Password Manager: ")
-    # write_key() 
-    # This will run once only to encode and set the master password , once we set the master password 
-    # then from 2nd times execution use that master password and store , view, etc about your file
-    # if you want to reset master password then reset the key.key anf Passwords.txt and starting executing with write_key() first and follow the upper steps
-    key = load_key() + master_password.encode()
+    key = load_key() 
     fer = Fernet(key)
 
     manager = passwordManager(fer)
